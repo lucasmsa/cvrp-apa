@@ -1,7 +1,7 @@
 # APA
 <html>
-<body style="background-color:black;">
-<font color = 'White'>
+<body style="background-color:black">
+<font color = 'white'>
 <h2>Implementation of the CVRP problem in c++ <h2>
 <h1>This is a heading</h1>
 <p>This is a paragraph.</p>
