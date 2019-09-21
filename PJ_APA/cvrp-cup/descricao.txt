@@ -1,0 +1,8 @@
+Como interpretar os arquivos:
+
+-) O número de vértices pode ser encontrado no campo DIMENSION.
+-) O número de veículos pode ser encontrado no campo VEHICLES.
+-) A capacidade de cada veículo pode ser encontrada no campo CAPACITY.
+-) As coordenadas de cada vértice podem ser encontradas no campo NODE_COORD_SECTION. Tais coordenadas devem ser utilizadas para calcular a matriz de custos, composta pela distância euclidiana entre cada par de vértices. Note que, durante o cálculo de uma distância o valor resultante deve ser arredondado para o inteiro mais próximo.
+
+As soluções devem ser submetidas na página da competição: https://laser.ci.ufpb.br/cvrp-cup
