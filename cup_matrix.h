@@ -18,7 +18,6 @@ vector<vector<int >> Transpose(vector<vector<int>> &matrix, int dimension) {
         transposed_matrix.push_back(p);
     }
 
-    //---------------------------------------------------------
     while (a < dimension) {
         if (a == 0) {
             b = 1;
@@ -34,15 +33,7 @@ vector<vector<int >> Transpose(vector<vector<int>> &matrix, int dimension) {
         a += 1;
         b = 0;
     }
-    //---------------------------------------------------------
 
-//    for(k = 0; k < dimension; k++){
-//        for (o = 0; o < dimension; o++){
-//            cout << " " << transposed_matrix.at(k).at(o) << " ";
-//        }
-//        cout << "\n";
-//    }
-    cout << endl;
     return transposed_matrix;
 }
 

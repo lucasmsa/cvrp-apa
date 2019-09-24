@@ -33,27 +33,25 @@ vector<int> VndFunction(vector<vector<int> > &vnd_solution, vector<vector<int> >
         min_route = min(min_route, inverter_distance[j]);
         min_route = min(min_route, twoOpt_distance[j]);
 
-//        cout << "TEMP: " << temp_distance[j] << " SWAP: " << swap_distance[j] << " INVERTER: "<< inverter_distance[j] << " 2OPT: " << twoOpt_distance[j]<<"||min: "<< min_route << endl; 
 
         aux.clear();
 
         if (swap_distance[j] == min_route) {
-
+            
             for (k = 0; k < swap_solution.at(j).size(); k++)
                 aux.push_back(swap_solution[j][k]);
 
         } else if (twoOpt_distance[j] == min_route) {
-
+           
             for (k = 0; k < twoOpt_solution.at(j).size(); k++)
-                aux.push_back(swap_solution[j][k]);
+                aux.push_back(twoOpt_solution[j][k]);
 
         } else if (inverter_distance[j] == min_route) {
-
+      
             for (k = 0; k < inverter_solution.at(j).size(); k++)
                 aux.push_back(inverter_solution[j][k]);
 
         } else if (temp_distance[j] == min_route) {
-
 
             for (k = 0; k < temp_solution.at(j).size(); k++)
                 aux.push_back(temp_solution[j][k]);
@@ -62,49 +60,14 @@ vector<int> VndFunction(vector<vector<int> > &vnd_solution, vector<vector<int> >
 
         dist_aux=0;
 
-        for (count_aux = 0; count_aux < aux.size()-1; count_aux++)
-            dist_aux+=matrix.at(aux.at(count_aux)).at(aux.at(count_aux+1));   
-        
-        best_route.push_back(dist_aux);
+
+        best_route.push_back(min_route);
         vnd_solution.push_back(aux);
+
        
 
     }
-/*
-	cout << "###########################################################################################################################################"<<endl;
 
-    for (int m = 0; m < vehicles; m++)
-    {
-         for (int n = 0; n < final_solution.at(m).size(); n++)
-         {
-             cout << final_solution[m][n] << " ";
-         }
-
-         cout << endl;
-         cout << "Melhor solucao: " << best_route[m] << endl << endl;
-    }
-*/
-
-  /*int distance = 0;
-    int m = 0, n = 0, sum=0;
-for (m = 0; m < vnd_solution.size(); m++)
-    {
-        for (n = 0; n < vnd_solution.at(m).size()-1; n++)
-        {
-            distance += matrix[vnd_solution.at(m).at(n)][vnd_solution.at(m).at(n+1)];
-            cout << vnd_solution[m][n] << ", ";
-        }
-        cout << vnd_solution[m][n];
-        sum += best_route.at(m);
-        cout << "; " << endl;
-        cout << "VEICULO " << m << ", CALCULO DA DISTANCIA: " << distance << ", CALCULO DA FINAL_ROUTE: " << best_route.at(m) << endl;
-        distance = 0;
-
-    }
-    cout << "Distance Travelled: " << distance <<  ", outro: " << sum << endl;
-    cout << "SOLUTION SIZE (NUMBER OF ROUTES): " << vnd_solution.size() << endl;
-
-*/
 
     return best_route;
 }
